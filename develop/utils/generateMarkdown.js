@@ -44,3 +44,24 @@ function renderLicenseSection(license){
     }
     return licenseSection;
   }
+// TODO: Create a function to generate markdown for README
+function generateMarkdown(data) {
+    const sections = ["Description", "Installation", "Testing", "Contribution", "Mock-Up", "Application", "License", "Contact"];
+  // add title
+    let markdown = "# " + data.title + "\n";
+  
+  // display license badge at top of readme
+    markdown += renderLicenseBadge(data.license) + "\n";
+  
+  // add Table of Contents
+    markdown += "## Table of Contents\n";
+    for (let i = 0; i < sections.length; i++) {
+      if (! (sections[i] === "License" && data.license === "None")) {
+        markdown += i + 1 + ". [" + sections[i] + "](#" + sections[i][0].toLowerCase() + sections[i].substring(1) + ")\n";
+      }
+    }
+    markdown += "\n";
+
+    
+
+}
