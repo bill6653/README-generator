@@ -62,6 +62,42 @@ function generateMarkdown(data) {
     }
     markdown += "\n";
 
-    
+    // add description
+  markdown += "## " + sections[0] + "\n";
+  markdown += data.description + "\n";
+  markdown += "\n";
+
+// add installation
+  markdown += "## " + sections[1] + "\n";
+  markdown += data.installation + "\n";
+  markdown += "\n";
+
+// add testing
+  markdown += "## " + sections[2] + "\n";
+  markdown += data.testing + "\n";
+  markdown += "\n";
+
+// add contributing
+  markdown += "## " + sections[3] + "\n";
+  markdown += data.contribution + "\n";
+  markdown += "\n";
+
+// add mock-up
+  markdown += "## " + sections[4] + "\n";
+  markdown += data.mockup + "\n";
+  markdown += "\n";
+
+// add license
+  markdown += renderLicenseSection(data.license) + "\n";
+  markdown += "\n";
+  
+// add Contact
+  markdown += "## " + sections[7] + "\n";
+  markdown += "Email: " + data.email + "\n";
+  markdown += "GitHub: " + data.GitHub + "\n";
+
+  return markdown;
 
 }
+
+module.exports = generateMarkdown;
